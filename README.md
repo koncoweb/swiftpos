@@ -10,7 +10,7 @@ aplikasi kasir sederhana namun powerful
 7. kembalian
 8. petunjuk harga grosir
 9. tanpa butuh database ( localstorage browser ) / portable
-Need help or want to join the community? Join youtube kami [youtube tutorial]([https://discord.gg/shDEGBSe2d](https://www.youtube.com/@mohmbilly)).
+Need help or want to join the community? Join youtube kami [youtube tutorial]([https://www.youtube.com/@mohmbilly)])
 
 To run the devserver:
 ```
