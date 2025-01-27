@@ -1,5 +1,5 @@
 ## SwiftPOS oleh Koncoweb
-
+![swiftpos snapshot](https://raw.githubusercontent.com/koncoweb/swiftpos/refs/heads/main/swiftpos-screenshot.png "swiftpos snapshot")
 aplikasi kasir sederhana namun powerful
 1. input barang
 2. variasi produk ( berat, ukuran, warna, dll )
@@ -12,11 +12,11 @@ aplikasi kasir sederhana namun powerful
 9. tanpa butuh database ( localstorage browser ) / portable
 
     
-Need help or want to join the community? Join youtube kami
-[youtube tutorial]([https://www.youtube.com/@mohmbilly)])
+Need help or want to join the community? Join [**youtube kami**](http://https://www.youtube.com/@mohmbilly "**youtube kami**")
 
+```bash
 To run the devserver:
-```
+
 npm install
 npm run dev
 ```
