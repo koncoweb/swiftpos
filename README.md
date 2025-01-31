@@ -1,5 +1,5 @@
 ## SwiftPOS oleh Koncoweb
-ingin kustomisasi secara mudah ? Tutorial [**Lihat Tutorial**]((https://www.youtube.com/watch?v=zAlhYWO9flE) "**Lihat Tutorial**")
+ingin kustomisasi aplikasi kasir gratis dan open source ini secara mudah ? **[Lihat Tutorial](https://www.youtube.com/watch?v=zAlhYWO9flE)** 
 ![swiftpos snapshot](https://raw.githubusercontent.com/koncoweb/swiftpos/refs/heads/main/swiftpos-screenshot.png "swiftpos snapshot")
 aplikasi kasir sederhana namun powerful
 1. input barang
