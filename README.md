@@ -1,4 +1,5 @@
 ## SwiftPOS oleh Koncoweb
+ingin kustomisasi secara mudah ? Tutorial [**Lihat Tutorial**]((https://www.youtube.com/watch?v=zAlhYWO9flE) "**Lihat Tutorial**")
 ![swiftpos snapshot](https://raw.githubusercontent.com/koncoweb/swiftpos/refs/heads/main/swiftpos-screenshot.png "swiftpos snapshot")
 aplikasi kasir sederhana namun powerful
 1. input barang
@@ -11,7 +12,7 @@ aplikasi kasir sederhana namun powerful
 8. petunjuk harga grosir
 9. tanpa butuh database ( localstorage browser ) / portable
 
-    
+Aplikasi Kasir ini bebas anda gunakan untuk komersial maupun non komersial dengan menyertakan credit kepada author ( Saya ) dan link ke Repository ini 
 Need help or want to join the community? Join [**youtube kami**](http://https://www.youtube.com/@mohmbilly "**youtube kami**")
 
 ```bash
