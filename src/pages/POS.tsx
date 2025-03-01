@@ -78,7 +78,7 @@ export default function POS() {
       id: crypto.randomUUID(),
       items: cartItems,
       total: cartItems.reduce((sum, item) => {
-        const isWholesale = item.quantity >= item.variant.minWholesaleQty;
+        const isWholesale = item.quantity >= (item.variant.minWholesaleQty || 0);
         const price = isWholesale ? item.variant.wholesalePrice : item.variant.price;
         return sum + (price * item.quantity);
       }, 0),

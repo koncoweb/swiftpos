@@ -71,7 +71,7 @@ export default function SalesReceipt({ sale, onClose }: SalesReceiptProps) {
               </thead>
               <tbody className="text-sm">
                 {sale.items.map((item) => {
-                  const price = item.quantity >= item.variant.minWholesaleQty
+                  const price = item.quantity >= (item.variant.minWholesaleQty || 0)
                     ? item.variant.wholesalePrice
                     : item.variant.price;
                   const itemTotal = price * item.quantity;

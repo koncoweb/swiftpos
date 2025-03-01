@@ -5,6 +5,7 @@ export interface ProductVariant {
   price: number;
   wholesalePrice: number;
   stock: number;
+  minWholesaleQty?: number; // Minimum quantity for wholesale pricing
 }
 
 export interface Product {

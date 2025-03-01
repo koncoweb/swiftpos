@@ -14,7 +14,7 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
   const [showChange, setShowChange] = useState(false);
 
   const total = items.reduce((sum, item) => {
-    const isWholesale = item.quantity >= item.variant.minWholesaleQty;
+    const isWholesale = item.quantity >= (item.variant.minWholesaleQty || 0);
     const price = isWholesale ? item.variant.wholesalePrice : item.variant.price;
     return sum + (price * item.quantity);
   }, 0);
@@ -60,10 +60,10 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
       
       <div className="flex-1 overflow-auto">
         {items.map((item) => {
-          const isWholesale = item.quantity >= item.variant.minWholesaleQty;
+          const isWholesale = item.quantity >= (item.variant.minWholesaleQty || 0);
           const price = isWholesale ? item.variant.wholesalePrice : item.variant.price;
           const itemTotal = price * item.quantity;
-          const remainingForWholesale = !isWholesale ? item.variant.minWholesaleQty - item.quantity : 0;
+          const remainingForWholesale = !isWholesale ? (item.variant.minWholesaleQty || 0) - item.quantity : 0;
           
           return (
             <div key={item.id} className="p-4 border-b border-white/10">
