@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "kpos",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "biz.konco.kpos",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -20,7 +20,12 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": ["default"],
+      "pattern": {
+        "use": "brownfield",
+        "allow": ["**"]
+      }
     }
   },
   "bundle": {

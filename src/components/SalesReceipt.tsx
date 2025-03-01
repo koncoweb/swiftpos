@@ -1,6 +1,7 @@
 import { Printer, X } from 'lucide-react';
 import { Sale } from '../types';
 import { useEffect, useState } from 'react';
+import { formatCurrency } from '../utils/currency';
 
 interface SalesReceiptProps {
   sale: Sale;
@@ -86,8 +87,8 @@ export default function SalesReceipt({ sale, onClose }: SalesReceiptProps) {
                         </span>
                       </td>
                       <td className="text-right">{item.quantity}</td>
-                      <td className="text-right">Rp {price.toFixed(2)}</td>
-                      <td className="text-right">Rp {itemTotal.toFixed(2)}</td>
+                      <td className="text-right">{formatCurrency(price)}</td>
+                      <td className="text-right">{formatCurrency(itemTotal)}</td>
                     </tr>
                   );
                 })}
@@ -97,7 +98,7 @@ export default function SalesReceipt({ sale, onClose }: SalesReceiptProps) {
 
           <div className="flex justify-between font-bold text-lg">
             <span>Total</span>
-            <span>Rp {sale.total.toFixed(2)}</span>
+            <span>{formatCurrency(sale.total)}</span>
           </div>
 
           <div className="text-center text-gray-500 text-sm pt-4 border-t border-gray-200">

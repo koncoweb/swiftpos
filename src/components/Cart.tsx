@@ -1,6 +1,7 @@
 import { Minus, Plus, ShoppingCart, X } from 'lucide-react';
 import { useState } from 'react';
 import { CartItem } from '../types';
+import { formatCurrency } from '../utils/currency';
 
 interface CartProps {
   items: CartItem[];
@@ -89,27 +90,27 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="text-emerald-600 font-medium">
-                            Rp {price.toFixed(2)}
+                            {formatCurrency(price)}
                           </span>
                           <span className="bg-emerald-100 text-emerald-700 text-xs px-2 py-0.5 rounded-full">
                             Harga Grosir
                           </span>
                         </div>
                         <div className="text-xs text-gray-500">
-                          Harga normal: Rp {item.variant.price.toFixed(2)}
+                          Harga normal: {formatCurrency(item.variant.price)}
                         </div>
                       </div>
                     ) : (
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium">Rp {price.toFixed(2)}</span>
+                          <span className="font-medium">{formatCurrency(price)}</span>
                           <span className="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full">
                             Harga Normal
                           </span>
                         </div>
                         {remainingForWholesale > 0 && (
                           <div className="text-xs text-blue-600">
-                            Tambah {remainingForWholesale} lagi untuk harga grosir (Rp {item.variant.wholesalePrice.toFixed(2)})
+                            Tambah {remainingForWholesale} lagi untuk harga grosir ({formatCurrency(item.variant.wholesalePrice)})
                           </div>
                         )}
                       </div>
@@ -146,7 +147,7 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
               </div>
               
               <div className="text-right text-sm mt-1">
-                Subtotal: <span className="font-medium text-emerald-600">Rp {itemTotal.toFixed(2)}</span>
+                Subtotal: <span className="font-medium text-emerald-600">{formatCurrency(itemTotal)}</span>
               </div>
             </div>
           );
@@ -156,7 +157,7 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
       <div className="p-4 border-t border-white/20 backdrop-blur-lg space-y-4">
         <div className="flex justify-between items-center text-lg">
           <span className="font-semibold">Total</span>
-          <span className="font-bold text-emerald-600">Rp {total.toFixed(2)}</span>
+          <span className="font-bold text-emerald-600">{formatCurrency(total)}</span>
         </div>
 
         <div className="space-y-2">
@@ -198,13 +199,13 @@ export default function Cart({ items, onUpdateQuantity, onRemoveItem, onCheckout
               </span>
               {isPaymentValid && (
                 <span className="font-bold text-emerald-600">
-                  Rp {Math.max(0, change).toFixed(2)}
+                  {formatCurrency(Math.max(0, change))}
                 </span>
               )}
             </div>
             {!isPaymentValid && (
               <p className="text-sm text-red-600 mt-1">
-                Kurang: Rp {Math.abs(change).toFixed(2)}
+                Kurang: {formatCurrency(Math.abs(change))}
               </p>
             )}
           </div>

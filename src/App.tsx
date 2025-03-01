@@ -28,8 +28,8 @@ function App() {
 
     // Initialize default owner account if no users exist
     try {
-      const users = localStorage.getItem('users');
-      if (!users) {
+      let users = localStorage.getItem('users');
+      if (!users || JSON.parse(users).length === 0) {
         const defaultOwner = {
           id: crypto.randomUUID(),
           username: 'owner',
@@ -38,7 +38,10 @@ function App() {
           role: 'owner'
         };
         localStorage.setItem('users', JSON.stringify([defaultOwner]));
+        users = JSON.stringify([defaultOwner]);
       }
+      // Ensure users are properly loaded
+      console.log('Users initialized:', JSON.parse(users));
     } catch (error) {
       console.error('Failed to initialize default user:', error);
     }
